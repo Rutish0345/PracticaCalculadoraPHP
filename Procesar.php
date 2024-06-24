@@ -1,5 +1,8 @@
 <?php
-
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num1 = $_POST["num1"];
+    $num2 = $_POST["num2"];
+    $operacion = $_POST["operacion"];
 function Sumar($num1, $num2) {
     return $num1 + $num2;
 }
@@ -19,10 +22,7 @@ function Dividir($num1, $num2) {
     return $num1 / $num2;}
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $num1 = $_POST["num1"];
-        $num2 = $_POST["num2"];
-        $operacion = $_POST["operacion"];
+   
     
         if (is_numeric($num1) && is_numeric($num2)) {
             switch ($operacion) {
